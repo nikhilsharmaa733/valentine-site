@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Special Day ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== Background ===== */
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Poppins', sans-serif;
+    background: radial-gradient(circle at top, #1a001f, #000);
+    overflow:hidden;
+}
+
+/* Animated glowing gradient */
+
+body::before{
+    content:'';
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:linear-gradient(45deg,#ff4d6d,#ff758f,#c77dff);
+    filter:blur(180px);
+    animation:glowMove 10s infinite alternate;
+}
+
+@keyframes glowMove{
+    from{ transform:translate(-150px,-150px); }
+    to{ transform:translate(150px,150px); }
+}
+
+/* ===== Glass Card ===== */
+
+.card{
+    position:relative;
+    padding:70px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(25px);
+    border:1px solid rgba(255,255,255,0.15);
+    text-align:center;
+    color:white;
+    max-width:750px;
+    box-shadow:0 0 60px rgba(255,77,109,0.25);
+}
+
+/* Heading */
+
+h1{
+    font-family:'Playfair Display', serif;
+    font-size:56px;
+    margin-bottom:25px;
+    letter-spacing:1px;
+}
+
+/* Text */
+
+p{
+    font-size:20px;
+    line-height:1.8;
+    color:#f1f1f1;
+}
+
+/* Image */
+
+img{
+    width:260px;
+    border-radius:18px;
+    margin-bottom:30px;
+    box-shadow:0 10px 40px rgba(0,0,0,.6);
+    transition:.4s;
+}
+
+img:hover{
+    transform:scale(1.05);
+}
+
+/* Floating hearts */
+
+.heart{
+    position:absolute;
+    color:#ff4d6d;
+    animation:float 8s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
+}
+
+/* Fade in card */
+
+.card{
+    animation:fade 1.5s ease;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="card">
+
+<h1>🌹 Rose Day</h1>
+
+<img src="photo1.jpg">
+
+<p>
+Loving you has never felt like a choice…
+
+it feels like destiny quietly guiding my heart toward yours.
+
+You walked into my life and suddenly  
+love stopped being a word —  
+it became my reality.
+
+And if I had to live life all over again…
+
+I would still find my way back to you ❤️
+</p>
+
+</div>
+
+<script>
+
+/* Elegant slow hearts */
+
+setInterval(()=>{
+
+    const heart=document.createElement("div");
+    heart.classList.add("heart");
+
+    heart.innerHTML="❤";
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(Math.random()*25+10)+"px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },8000);
+
+},500);
+
+</script>
+
+</body>
+</html>
