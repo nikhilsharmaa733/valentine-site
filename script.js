@@ -32,25 +32,25 @@ d.classList.toggle("filled",i<pin.length);
 /* TRAILER MESSAGE */
 
 const trailerMessage = 
-`Before We Step Into This Week
+`Before We Step Into This Week....
 
 Pause.
 
 Breathe.
 
-There is something I need you to remember.
+There Is Something I Need You Yo Remember.
 
-Meeting you was not luck.
+Meeting You Was Not Just A Luck.
 
-It was destiny being gentle with me.
+It Was Destiny Being Gentle With Me.
 
-And if life ever becomes loud...
+And If Life Ever Becomes Loud...
 
-come back here,
+Come Back Here,
 
-and remember —
+And Remember —
 
-you are deeply loved ❤️`;
+There Is Someone Who Cares About You More Then Himself ❤️`;
 
 function typeWriter(text, speed=42){
 
@@ -187,7 +187,7 @@ setTimeout(()=>heart.remove(),7000);
 /* ================= UNLOCK DAYS ================= */
 
 const days=[
-{ name:"🌹 Rose Day",date:"2026-02-07",page:"rose.html"},
+{ name:"🌹 Rose Day",date:"2026-02-06",page:"rose.html"},
 { name:"💍 Propose Day",date:"2026-02-08",page:"propose.html"},
 { name:"🍫 Chocolate Day",date:"2026-02-09",page:"chocolate.html"},
 { name:"🧸 Teddy Day",date:"2026-02-10",page:"teddy.html"},

@@ -1,6 +1,14 @@
-/* ================= GLOBAL MUSIC RESUME ================= */
+/* ================= GLOBAL MUSIC ================= */
 
-let music = null;
+let musicStarted = false;
+let music;
+
+/* Start music on FIRST user interaction */
+document.addEventListener("click", startMusicOnce);
+
+function startMusicOnce(){
+
+if(musicStarted) return;
 
 if(localStorage.getItem("musicPlaying") === "true"){
 
@@ -9,20 +17,25 @@ music = new Audio("music.mp3");
 music.loop = true;
 music.volume = 0.35;
 
-/* ✅ Resume from last timestamp */
+/* resume timestamp */
 let savedTime = localStorage.getItem("musicTime");
 
 if(savedTime){
 music.currentTime = savedTime;
 }
 
-/* Safe play */
 music.play().catch(()=>{});
 
-/* ✅ Keep saving timestamp */
+/* keep saving time */
 setInterval(()=>{
 localStorage.setItem("musicTime", music.currentTime);
 },1000);
+
+musicStarted = true;
+
+/* remove listener after starting */
+document.removeEventListener("click", startMusicOnce);
+}
 
 }
 
@@ -36,20 +49,15 @@ roses.forEach(rose=>{
 
 rose.addEventListener("click",()=>{
 
-/* 📳 Soft vibration for mobile */
 navigator.vibrate?.(80);
 
-/* Remove bloom from others */
 roses.forEach(r=>r.classList.remove("bloom"));
 
-/* Bloom clicked rose */
 rose.classList.add("bloom");
 
-/* Show message */
 box.innerText=rose.dataset.message;
 box.style.opacity="1";
 
-/* Reveal "only the beginning..." */
 setTimeout(()=>{
 beginning.style.opacity="1";
 },1500);
