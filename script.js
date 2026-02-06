@@ -198,19 +198,34 @@ const days=[
 ];
 
 const container=document.getElementById("days");
-const today=new Date();
+
+/* 👉 USE SYSTEM CLOCK (NOT UTC) */
+const today = new Date();
+today.setHours(0,0,0,0); // removes time completely
 
 days.forEach(day=>{
+
 const div=document.createElement("div");
 div.className="day";
 
-if(today>=new Date(day.date)){
+/* convert unlock date properly */
+const unlockDate = new Date(day.date);
+unlockDate.setHours(0,0,0,0);
+
+/* compare real dates */
+if(today >= unlockDate){
+
 div.innerHTML=day.name;
 div.onclick=()=>window.location.href=day.page;
+
 }else{
+
 div.innerHTML="🔒 "+day.name;
 div.classList.add("locked");
+
 }
 
 container.appendChild(div);
+
 });
+
