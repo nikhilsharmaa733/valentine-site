@@ -187,7 +187,7 @@ setTimeout(()=>heart.remove(),7000);
 /* ================= UNLOCK DAYS ================= */
 
 const days=[
-{ name:"🌹 Rose Day",date:"2026-02-06",page:"rose.html"},
+{ name:"🌹 Rose Day",date:"2026-02-07",page:"rose.html"},
 { name:"💍 Propose Day",date:"2026-02-08",page:"propose.html"},
 { name:"🍫 Chocolate Day",date:"2026-02-09",page:"chocolate.html"},
 { name:"🧸 Teddy Day",date:"2026-02-10",page:"teddy.html"},
