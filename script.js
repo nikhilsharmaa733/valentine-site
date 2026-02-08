@@ -48,7 +48,7 @@ And If Life Ever Becomes Loud...
 
 Come Back Here,
 
-And Remember —
+And Remember 
 
 There Is Someone Who Cares About You More Than Himself ❤️`;
 
