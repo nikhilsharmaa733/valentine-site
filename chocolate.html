@@ -6,109 +6,26 @@
 
 <title>Chocolate Day 🍫</title>
 
-<style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
-body{
-    margin:0;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-family:'Segoe UI';
-    background:linear-gradient(135deg,#ff758c,#ff7eb3);
-    overflow:hidden;
-}
-
-/* Glass Card */
-
-.card{
-    padding:60px;
-    border-radius:25px;
-    background:rgba(255,255,255,0.15);
-    backdrop-filter:blur(20px);
-    text-align:center;
-    color:white;
-    max-width:700px;
-}
-
-/* Big Heading */
-
-h1{
-    font-size:48px;
-    margin-bottom:20px;
-}
-
-/* Message */
-
-p{
-    font-size:22px;
-    line-height:1.6;
-}
-
-/* Floating Hearts */
-
-.heart{
-    position:absolute;
-    font-size:20px;
-    animation:float 6s linear infinite;
-}
-
-@keyframes float{
-    from{
-        transform:translateY(100vh);
-        opacity:1;
-    }
-    to{
-        transform:translateY(-10vh);
-        opacity:0;
-    }
-}
-
-</style>
+<link rel="stylesheet" href="chocolate.css">
 </head>
+
 <body>
 
-<div class="card">
+<div class="bg"></div>
 
-<h1>🍫 Chocolate Day</h1>
+<div class="memory">
 
-<p>
-From the moment you came into my life,  
-everything started feeling softer, warmer, brighter.
+<img id="memoryImg" src="choco-1.1.jpg">
 
-If I could give you one thing in life,  
-I would give you the ability to see yourself through my eyes.
+<div id="memoryText"></div>
 
-Because to me…
-
-You are perfect ❤️
-</p>
+<div class="tapHint">tap to continue</div>
 
 </div>
 
-<script>
-
-/* Floating hearts generator */
-
-setInterval(()=>{
-
-    const heart=document.createElement("div");
-    heart.classList.add("heart");
-
-    heart.innerHTML="❤️";
-
-    heart.style.left=Math.random()*100+"vw";
-    heart.style.fontSize=(Math.random()*20+10)+"px";
-
-    document.body.appendChild(heart);
-
-    setTimeout(()=>{
-        heart.remove();
-    },6000);
-
-},300);
-
-</script>
+<script src="chocolate.js"></script>
 
 </body>
 </html>

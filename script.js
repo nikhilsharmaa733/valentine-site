@@ -38,7 +38,7 @@ Pause.
 
 Breathe.
 
-There Is Something I Need You Yo Remember.
+There Is Something I Need You To Remember.
 
 Meeting You Was Not Just A Luck.
 
@@ -50,7 +50,7 @@ Come Back Here,
 
 And Remember —
 
-There Is Someone Who Cares About You More Then Himself ❤️`;
+There Is Someone Who Cares About You More Than Himself ❤️`;
 
 function typeWriter(text, speed=42){
 
