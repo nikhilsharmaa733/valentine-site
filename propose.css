@@ -100,9 +100,9 @@ animation:blink 1s infinite;
 }
 
 #finalLine{
-margin-top:50px;
+margin-top:28px;
 font-family:'Playfair Display';
-font-size:clamp(26px,4vw,38px);
+font-size:clamp(20px,3.5vw,30px);
 opacity:0;
 
 transform:translateY(30px); /* start slightly lower */
