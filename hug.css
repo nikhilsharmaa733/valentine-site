@@ -1,0 +1,77 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+height:100vh;
+background:#040405;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:'Playfair Display',serif;
+color:white;
+overflow:hidden;
+position:relative;
+}
+
+/* calm glow */
+
+.glow{
+position:absolute;
+width:75vw;
+height:75vw;
+background:radial-gradient(circle,#ffd6e0,#cdb4db);
+filter:blur(260px);
+opacity:.06;
+}
+
+/* layout */
+
+.container{
+width:90%;
+max-width:650px;
+text-align:center;
+}
+
+/* text */
+
+#text{
+font-size:clamp(26px,5vw,38px);
+line-height:1.7;
+letter-spacing:.5px;
+
+opacity:0;
+transform:translateY(20px);
+
+transition:1.4s ease;
+}
+
+.show{
+opacity:1 !important;
+transform:translateY(0) !important;
+}
+
+/* hug image */
+
+#hugImg{
+width:100%;
+max-height:55vh;
+object-fit:contain;
+
+border-radius:22px;
+margin-top:40px;
+
+opacity:0;
+transform:scale(.96);
+
+transition:2s ease;
+
+box-shadow:0 40px 90px rgba(0,0,0,.7);
+}
+
+.showImg{
+opacity:1 !important;
+transform:scale(1) !important;
+}
