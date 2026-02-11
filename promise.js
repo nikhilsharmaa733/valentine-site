@@ -1,4 +1,4 @@
-/* resume music */
+/* ================= MUSIC ================= */
 
 if(localStorage.getItem("musicPlaying")==="true"){
 
@@ -21,52 +21,101 @@ localStorage.setItem("musicTime",music.currentTime);
 }
 
 
-/* PROMISE FLOW */
+/* ================= 1204 VOW SYSTEM ================= */
 
-const promises = [
+const vows = [
 
-"I promise you won't have to face life alone anymore.",
+"12 Promises.<br>04 Truths.<br><br>One heart that belongs to you.",
 
-"On the days you feel strong — I'll admire you.<br>On the days you don't — I'll carry you.",
+"I promise to protect you.",
 
-"I promise to choose us… even on ordinary days.",
+"I promise to always stand beside you.",
 
-"And when life gets uncertain —<br>my hand will be the one that never lets go."
+"I promise to listen to everything you say.",
+
+"I promise to be your safe zone on hard days.",
+
+"I promise to chairish every version of you.",
+
+"I promise to grow with you.",
+
+"I promise to choose understanding over ego.",
+
+"I promise to make ordinary days feel special.",
+
+"I promise to remind you how loved you are.",
+
+"I promise honesty and transparency even when it's hard.",
+
+"I promise that I will always be your's.",
+
+
+/* smooth emotional shift */
+
+"You are not temporary in my life.",
+
+"With you, love feels effortless.",
+
+"You are my safest place my comfort zone.",
+
+"And just like the day we became ours <br><br><span class='special'>12 • 04</span><br><br>I will choose you.<br><br>Again.<br>And again.<br>And again."
 
 ];
 
-let index = -1;
-
 const text = document.getElementById("promiseText");
 
-/* first reveal */
+let index = 0;
+let ready = true;
+
+
+/* first vow auto appears */
 
 setTimeout(()=>{
-text.innerHTML="Tap anywhere...";
+
+text.innerHTML = vows[index];
 text.classList.add("show");
-},800);
+
+},700);
 
 
-/* tap to progress */
+/* tap progression */
 
 document.body.addEventListener("click",()=>{
 
-index++;
+if(!ready) return;
 
-if(index >= promises.length){
-index = promises.length-1;
-return;
-}
+if(index >= vows.length-1) return;
+
+ready = false;
 
 /* fade out */
+
 text.classList.remove("show");
 
-/* change text after fade */
 setTimeout(()=>{
 
-text.innerHTML = promises[index];
+index++;
+
+text.innerHTML = vows[index];
+
+/* slower final vow */
+if(index === vows.length-1){
+
+text.style.transition = "opacity 2s ease, transform 2s ease";
+
+}else{
+
+text.style.transition = "opacity 1.25s ease, transform 1.25s ease";
+}
+
 text.classList.add("show");
 
-},600);
+ready = true;
+
+},500);
 
 });
+
+if(index === vows.length-1){
+document.querySelector(".tapHint").style.opacity = "0";
+}

@@ -55,27 +55,56 @@ There Is Someone Who Cares About You More Than Himself ❤️`;
 function typeWriter(text, speed=42){
 
 const el=document.getElementById("typeText");
-let i=0;
+const tapHint=document.getElementById("tapHint");
 
-function typing(){
+let i=0;
+let typing=true; // ⭐ controls skipping
+
+function typingEffect(){
+
+if(!typing) return;
 
 if(i<text.length){
 
 el.innerHTML += text.charAt(i);
 i++;
-setTimeout(typing, speed);
+setTimeout(typingEffect, speed);
 
 }else{
 
-document.getElementById("tapHint").style.opacity="1";
+typing=false;
+tapHint.style.opacity="1";
 enableTap();
 
 }
 
 }
 
-typing();
+typingEffect();
+
+
+/* ⭐ TAP TO SKIP */
+
+document.getElementById("cinematic")
+.addEventListener("click",()=>{
+
+if(!typing) return;
+
+/* stop typing */
+typing=false;
+
+/* instantly show full message */
+el.innerHTML=text;
+
+/* reveal hint immediately */
+tapHint.style.opacity="1";
+
+enableTap();
+
+});
+
 }
+
 
 /* ================= CHECK PIN ================= */
 
